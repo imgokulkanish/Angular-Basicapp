@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { MyserviceService } from './myservice.service'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,27 +7,33 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Cricbuzz';
-  imgurl = "assets/vk.jpg"
-  display = "Access Denied"
-  Name = ""
-  username1:string = "Enter Your Name";
+  todaydate;
+  // imgurl = "assets/vk.jpg"
+  // display = "Access Denied"
+  // Name = ""
+  // username1:string = "Enter Your Name";
+  constructor(private myservice: MyserviceService) {}
+  ngOnInit(){
+    this.todaydate = this.myservice.showTodayDate();
+  }
+  }
   // show : boolean=true;//ngIf
   // allow = true;
-  onAllow(){
-    return this.display="Access Allowed";
-  }
+  // onAllow(){
+  //   return this.display="Access Allowed";
+  // }
 
 // constructor() {
 //   setTimeout(()=>{
 //     this.allow = false;
 //   },8000);
 // }
-OnUpdateName(event:Event){
-   return this.Name = (<HTMLInputElement>event.target).value;
-}
-ngOnInit(){
-}
-}
+// OnUpdateName(event:Event){
+//    return this.Name = (<HTMLInputElement>event.target).value;
+// }
+// ngOnInit(){
+// }
+// }
 
   //ngStyle
 //   number:number;

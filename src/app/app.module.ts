@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NewcompComponent } from './newcomp/newcomp.component';
 import { TestcompComponent } from './testcomp/testcomp.component';
 import { FormsModule } from '@angular/forms';
+import { MyserviceService } from './myservice.service'
 @NgModule({
   declarations: [
     AppComponent,
